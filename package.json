@@ -1,0 +1,14 @@
+{
+    "name": "request-idle-callbacks",
+    "version": "1.0.1",
+    "description": "",
+    "main": "index.js",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/packjs/request-idle-callback.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT"
+}
