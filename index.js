@@ -1,10 +1,7 @@
-export const requestIdleCallback = window.requestIdleCallback ||
-function (cb, options) {
-    options = options || {
-        timeout: 100
-    };
-    options.timeout = options.timeout || 100;
-
+var requestIdleCallback = function (cb) {
+    if (global.requestIdleCallback) {
+        return global.requestIdleCallback(cb);
+    }
     var start = Date.now();
     return setTimeout(function () {
         cb({
@@ -12,11 +9,17 @@ function (cb, options) {
             timeRemaining: function () {
                 return Math.max(0, 50 - (Date.now() - start));
             }
-        })
-    }, options.timeout);
+        });
+    }, 1);
 }
 
-export const cancelIdleCallback = window.cancelIdleCallback ||
-function (id) {
-    clearTimeout(id);
+var cancelIdleCallback = function (id) {
+    if (global.cancelIdleCallback) {
+        return global.cancelIdleCallback(id);
+    }
+
+    return clearTimeout(id);
 }
+
+exports.requestIdleCallback = requestIdleCallback;
+exports.cancelIdleCallback = cancelIdleCallback;
