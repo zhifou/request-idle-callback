@@ -1,1 +1,4 @@
-.vscode
+output
+.svn
+node_modules/
+.vscode/

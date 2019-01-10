@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="#app">这是个RequestIdleCallback测试页面, 看看Console输出</div>
+    <!-- <script src="https://cdn.bootcss.com/require.js/2.3.6/require.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script> -->
+    <script src="../node_modules/babel-core/browser.min.js">
+    </script>
+    <script type="text/babel" src="../dist/index.js"></script>
+    <script type="text/babel">
+        console.log(6666666);
+        requestIdleCallback(() => { console.log(1234); });
+    </script>
+</body>
+
+</html>

@@ -1,14 +1,28 @@
 {
     "name": "request-idle-callbacks",
-    "version": "1.1.1",
-    "description": "",
-    "main": "index.js",
+    "version": "1.1.2",
+    "description": "浏览器在空闲时执行回调，完成业务功能",
+    "main": "dist/index.js",
     "private": false,
+    "scripts": {
+        "start": "webpack --config webpack.config.js",
+        "dev": "npx webpack-dev-server --mode development --content-base ./dist",
+        "build": "tsc --outDir dist src/index.ts -m es6"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/packjs/request-idle-callback.git"
     },
     "keywords": [],
     "author": "",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "babel-core": "^5.8.38",
+        "source-map-loader": "^0.2.4",
+        "ts-loader": "^5.3.1",
+        "typescript": "^3.2.2",
+        "webpack": "^4.27.1",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.10"
+    }
 }
